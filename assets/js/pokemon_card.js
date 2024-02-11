@@ -16,8 +16,8 @@ export const createCard = ({id, name, types, sprites, stats, abilities, height, 
             <h3>#${id}</h3>
         </div>
 
-        <img src="${(sprites.other['official-artwork'].front_default) ?? (sprites.front_default)}" class="card__img">
-        <img src="${(sprites.other['official-artwork'].front_default) ?? (sprites.front_default)}" class="card__img_bg">
+        <img src="${(sprites.other['official-artwork'].front_default) ?? (sprites.front_default)}" class="card__img" loading="lazy">
+        <img src="${(sprites.other['official-artwork'].front_default) ?? (sprites.front_default)}" class="card__img_bg" loading="lazy">
 
         <div class="card__info">
             <div class="card__types">

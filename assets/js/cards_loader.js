@@ -54,7 +54,7 @@ const enableBtn = () => loadCardsBtn.classList.remove('disabled');
 
 
 export const cardsLoaderCreator = function(url = false){
-    url = (url === false) ? "https://pokeapi.co/api/v2/pokemon?limit=30" : url;
+    url = (url === false) ? "https://pokeapi.co/api/v2/pokemon?limit=24" : url;
     let nextPage = true;
     clearContainer();
     enableBtn();
