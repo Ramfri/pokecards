@@ -116,6 +116,14 @@ button{
     background-color: var(--softGreen);
 }
 
+#cardsContainer{
+    margin-top: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
 @media (width < 800px) {
     .header{
         flex-direction: column;
@@ -125,15 +133,11 @@ button{
         margin: 1rem 0;
         font-size: 3rem;
     }
+    #cardsContainer{
+        margin-top: 14rem;
+    }
 }
 
-#cardsContainer{
-    margin-top: 10rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
 
 .card {
     position: relative;
