@@ -1,9 +1,9 @@
 import { cardsLoaderCreator } from "./cards_loader.js";
 
-const searchInput = document.querySelector('#searchInput');
-const searchBtn = document.querySelector('#searchButton');
+const searchInput = document.querySelector('#searchBar');
 let types = {};
 let lastSearch = "";
+let currentSearh;
 
 export const updateTypes = () => {
     fetch("https://pokeapi.co/api/v2/type/")
@@ -19,16 +19,23 @@ const isNewSearch = (input) => {
     return isNew;
 }
 
-searchBtn.addEventListener('click', () => {
+searchInput.addEventListener('input', () => {
     const input = searchInput.value.trim().toLowerCase();
 
     if(isNewSearch(input)){
-        if (input === "") return cardsLoaderCreator();
-
-        if (types.hasOwnProperty(input)){
-            return cardsLoaderCreator(types[input]);
-        };
-
-        cardsLoaderCreator("https://pokeapi.co/api/v2/pokemon/" + input);
+        clearTimeout(currentSearh);
+        if (input === ""){
+            currentSearh = setTimeout(() => {
+                cardsLoaderCreator();
+            }, 600);
+        } else if (types.hasOwnProperty(input)){
+            currentSearh = setTimeout(() => {
+                cardsLoaderCreator(types[input]);
+            }, 600);
+        } else {
+            currentSearh = setTimeout(() => {
+                cardsLoaderCreator("https://pokeapi.co/api/v2/pokemon/" + input);
+            }, 600);
+        }
     }
 })

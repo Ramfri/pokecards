@@ -12,17 +12,20 @@
 <body>
     <header class="header">
         <h1 class="header__title">PokeCards</h1>
-        <div class="header__search">
-            <input type="text" id="searchInput" placeholder="Search by name or type">
-            <button id="searchButton" title="Search"><i class="fas fa-search"></i></button>
-        </div>
+        <input type="text" id="searchBar" placeholder="Search by name or type">
     </header>
 
     <main class="container" id="cardsContainer"></main>
 
-    <div class="load">
-        <button id="loadBtn">Load more</button>
+    <div id="loading" class="loading_anim">
+        <img src="assets/imgs/loadingpokemon.gif" alt="loading animation">
+        <p>Searching...</p>
     </div>
+
+    
+    <button id="go_top" type="button">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script type="module" src="assets/js/app.js"></script>
 </body>

@@ -44,6 +44,7 @@ body {
     font-family: var(--font);
     font-size: 1.6rem;
     background-color: var(--background);
+    position: relative;
 }
 
 input, button{
@@ -62,19 +63,16 @@ button{
 
 .header{
     width: min(90% , 110rem);
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     height: 8rem;
-    padding: 1rem 0;
+    padding: 1rem;
     display: flex;
     border-radius: 1rem;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: 100;
     backdrop-filter: blur(0.75rem);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    margin: 1rem auto;
 }
 
 .header__title{
@@ -85,43 +83,20 @@ button{
     letter-spacing: 0.5rem;
 }
 
-.header__search{
+#searchBar{
     width: 30rem;
-    height: 5rem;
-    background-color: wheat;
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.5rem;
     background-color: var(--white);
-}
-
-.header__search input{
-    width: 80%;
-    height: 100%;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--black);
-    background-color: transparent;
-}
-
-.header__search button{
-    width: 20%;
-    height: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.75rem;
-    background-color: var(--softGreen);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 #cardsContainer{
-    margin-top: 10rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 3rem;
 }
 
 @media (width < 800px) {
@@ -133,8 +108,8 @@ button{
         margin: 1rem 0;
         font-size: 3rem;
     }
-    #cardsContainer{
-        margin-top: 14rem;
+    #searchBar{
+        width: min(95%, 30rem);
     }
 }
 
@@ -340,12 +315,16 @@ button{
     text-align: center;
 }
 
-.load{
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    margin: 3rem 0;
+#go_top{
+    position: fixed;
+    bottom: 3%;
+    right: 5%;
+    font-size: 3rem;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: var(--softGreen);
+    z-index: 100;
 }
 
 #loadBtn{
@@ -374,3 +353,23 @@ button{
 .error i{font-size: 3.5rem;}
 
 .error p{ text-align: center;}
+
+.loading_anim{
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loading_anim img{
+    width: 12rem;
+}
+
+.loading_anim p{
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
